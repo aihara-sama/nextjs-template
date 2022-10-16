@@ -1,0 +1,16 @@
+{
+  "extends": "@istanbuljs/nyc-config-typescript",
+  "cache": false,
+  "extension": [".ts", ".tsx"],
+  "exclude": ["**/*.d.ts", "test/coverage/**", "public", "test/cypress"],
+  "check-coverage": true,
+  "temp-directory": ".nyc_output",
+  "sourceMap": false,
+  "instrument": false,
+  "include": ["**/*.tsx"],
+  "report-dir": "test/coverage",
+  "branches": 80,
+  "lines": 80,
+  "functions": 80,
+  "statements": 80
+}
