@@ -1,6 +1,6 @@
-### React Template with auth
+### React Template following best practices and standarts
 
-#### NextJS + Typescript + MUI + Firebase + Redux Toolkit
+#### NextJS + Typescript + MUI + Firebase + Redux Toolkit + i18n + sitemaps
 
 ##### Usage
 
