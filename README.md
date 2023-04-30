@@ -1,3 +1,3 @@
-### React Template
+### React Template with auth
 
-#### NextJS + Typescript + MUI + Redux Toolkit
+#### NextJS + Typescript + MUI + Firebase + Redux Toolkit
