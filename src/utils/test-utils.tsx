@@ -9,8 +9,6 @@ import { RouterContext } from "next/dist/shared/lib/router-context";
 import type { NextRouter } from "next/router";
 import type { FunctionComponent, ReactElement } from "react";
 import { Provider } from "react-redux";
-import { persistStore } from "redux-persist";
-import { PersistGate } from "redux-persist/integration/react";
 import type { Store } from "store/index";
 import { store } from "store/index";
 import type { UrlObject } from "url";
@@ -73,24 +71,17 @@ export const createMockRouter = (
 
 const AllTheProviders: FunctionComponent<IMockAppProps> = ({ children }) => {
   window.store = store;
-  const persistor = persistStore(store, {}, () => {
-    persistor.persist();
-  });
 
   return (
     <RouterContext.Provider value={createMockRouter({}) as NextRouter}>
       <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-          {() => (
-            <ThemeProvider>
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <CssBaseline />
-                <Toaster />
-                {children}
-              </LocalizationProvider>
-            </ThemeProvider>
-          )}
-        </PersistGate>
+        <ThemeProvider>
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <CssBaseline />
+            <Toaster />
+            {children}
+          </LocalizationProvider>
+        </ThemeProvider>
       </Provider>
     </RouterContext.Provider>
   );
