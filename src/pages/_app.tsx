@@ -3,7 +3,6 @@ import { CacheProvider } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import Auth from "components/auth/Auth";
 import { Meta } from "components/common/Meta";
 import { Toaster } from "components/common/Toaster";
 import { ThemeProvider } from "contexts/theme";
@@ -32,7 +31,7 @@ function MyApp(props: MyAppProps) {
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>Study Guru</title>
+        <title>App</title>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
       <Meta />
@@ -41,9 +40,7 @@ function MyApp(props: MyAppProps) {
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <CssBaseline />
             <Toaster />
-            <Auth>
-              <Component {...pageProps} />
-            </Auth>
+            <Component {...pageProps} />
           </LocalizationProvider>
         </ThemeProvider>
       </Provider>
