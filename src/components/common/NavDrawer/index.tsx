@@ -9,10 +9,7 @@ interface IProps {
   setIsDrawer: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const MobileNavbarDrawer: FunctionComponent<IProps> = ({
-  isDrawer,
-  setIsDrawer,
-}) => {
+const NavDrawer: FunctionComponent<IProps> = ({ isDrawer, setIsDrawer }) => {
   // ~~~~~ Redux state ~~~~~
 
   // ~~~~~ Hooks ~~~~~
@@ -21,12 +18,16 @@ const MobileNavbarDrawer: FunctionComponent<IProps> = ({
 
   // ~~~~~ Refs ~~~~~
 
+  // ~~~~~ Vars ~~~~~
+
   // ~~~~~ Effects ~~~~~
 
   // ~~~~~ Handlers ~~~~~
   const handleClose = () => {
     setIsDrawer(false);
   };
+
+  // ~~~~~ JSX ~~~~~
   return (
     <Hidden mdUp>
       <Drawer
@@ -36,7 +37,7 @@ const MobileNavbarDrawer: FunctionComponent<IProps> = ({
         ModalProps={{
           keepMounted: true,
         }}
-        data-testid="drawer__container"
+        data-testid="nav-drawer"
         PaperProps={{
           sx: {
             width: { xs: "100%", sm: "390px" },
@@ -57,4 +58,4 @@ const MobileNavbarDrawer: FunctionComponent<IProps> = ({
   );
 };
 
-export default MobileNavbarDrawer;
+export default NavDrawer;

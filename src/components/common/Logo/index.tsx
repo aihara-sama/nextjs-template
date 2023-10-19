@@ -3,6 +3,21 @@ import Link from "next/link";
 import type { FunctionComponent } from "react";
 
 const Logo: FunctionComponent = () => {
+  // ~~~~~ Redux state ~~~~~
+
+  // ~~~~~ Hooks ~~~~~
+
+  // ~~~~~ Cmp state ~~~~~
+
+  // ~~~~~ Refs ~~~~~
+
+  // ~~~~~ Vars ~~~~~
+
+  // ~~~~~ Effects ~~~~~
+
+  // ~~~~~ Handlers ~~~~~
+
+  // ~~~~~ JSX ~~~~~
   return (
     <MuiLink
       component={Link}

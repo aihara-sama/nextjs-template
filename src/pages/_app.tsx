@@ -3,12 +3,10 @@ import { CacheProvider } from "@emotion/react";
 import CssBaseline from "@mui/material/CssBaseline";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
-import { Meta } from "components/common/Meta";
 import { Toaster } from "components/common/Toaster";
 import { ThemeProvider } from "contexts/theme";
 import { appWithTranslation } from "next-i18next";
 import type { AppProps } from "next/app";
-import Head from "next/head";
 import { Router } from "next/router";
 import nProgress from "nprogress";
 import { Provider } from "react-redux";
@@ -30,11 +28,6 @@ function MyApp(props: MyAppProps) {
 
   return (
     <CacheProvider value={emotionCache}>
-      <Head>
-        <title>App</title>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
-      <Meta />
       <Provider store={store}>
         <ThemeProvider>
           <LocalizationProvider dateAdapter={AdapterDateFns}>

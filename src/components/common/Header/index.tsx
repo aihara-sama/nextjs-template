@@ -3,30 +3,36 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Box, Hidden, IconButton } from "@mui/material";
 import { LanguageToggle } from "components/common/LanguageToggle";
 import Logo from "components/common/Logo";
-import MobileNavbarDrawer from "components/common/MobileNavbarDrawer";
+import NavDrawer from "components/common/NavDrawer";
 import { ThemeToggle } from "components/common/ThemeToggle";
+import type { FunctionComponent } from "react";
 import { useState } from "react";
 
-export const Header = () => {
-  const [isMobileNavbarDrawerOpen, setIsMobileNavbarDrawerOpen] =
-    useState<boolean>(false);
+export const Header: FunctionComponent = () => {
+  // ~~~~~ Redux state ~~~~~
 
+  // ~~~~~ Hooks ~~~~~
+
+  // ~~~~~ Cmp state ~~~~~
+  const [isNavDrawerOpen, setIsNavDrawerOpen] = useState<boolean>(false);
+
+  // ~~~~~ Refs ~~~~~
+
+  // ~~~~~ Vars ~~~~~
+
+  // ~~~~~ Effects ~~~~~
+
+  // ~~~~~ Handlers ~~~~~
+
+  // ~~~~~ JSX ~~~~~
   return (
     <Box
       component="header"
       sx={{
-        height: 60,
-        px: 2,
         display: "flex",
-        alignItems: "center",
         justifyContent: "space-between",
-        borderBottom: "1px solid",
-        borderColor: "divider",
-        position: "sticky",
-        top: 0,
-        left: 0,
-        zIndex: "appBar",
-        bgcolor: "background.default",
+        alignItems: "center",
+        p: 2,
       }}
     >
       <Logo />
@@ -34,10 +40,8 @@ export const Header = () => {
         <LanguageToggle />
         <ThemeToggle />
         <Hidden smUp>
-          <IconButton
-            onClick={() => setIsMobileNavbarDrawerOpen((prev) => !prev)}
-          >
-            {!isMobileNavbarDrawerOpen ? (
+          <IconButton onClick={() => setIsNavDrawerOpen((prev) => !prev)}>
+            {!isNavDrawerOpen ? (
               <MenuIcon fontSize="large" />
             ) : (
               <CloseIcon fontSize="large" />
@@ -45,10 +49,7 @@ export const Header = () => {
           </IconButton>
         </Hidden>
       </Box>
-      <MobileNavbarDrawer
-        isDrawer={isMobileNavbarDrawerOpen}
-        setIsDrawer={setIsMobileNavbarDrawerOpen}
-      />
+      <NavDrawer isDrawer={isNavDrawerOpen} setIsDrawer={setIsNavDrawerOpen} />
     </Box>
   );
 };

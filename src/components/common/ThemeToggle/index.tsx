@@ -8,17 +8,29 @@ import type { RootState } from "store";
 import type { ThemeType } from "theme";
 
 export const ThemeToggle = () => {
-  const dispatch = useDispatch();
+  // ~~~~~ Redux state ~~~~~
   const theme = useSelector((state: RootState) => state.app.theme);
+
+  // ~~~~~ Hooks ~~~~~
+  const dispatch = useDispatch();
+
+  // ~~~~~ Cmp state ~~~~~
   const [currentTheme, setCurrentTheme] = React.useState<ThemeType>("light");
 
+  // ~~~~~ Refs ~~~~~
+
+  // ~~~~~ Vars ~~~~~
+
+  // ~~~~~ Effects ~~~~~
   React.useEffect(() => {
     setCurrentTheme(theme);
   }, [theme]);
 
+  // ~~~~~ Handlers ~~~~~
   const toggleTheme = () =>
     dispatch(appSlice.actions.setTheme(theme === "light" ? "dark" : "light"));
 
+  // ~~~~~ JSX ~~~~~
   return (
     <IconButton onClick={toggleTheme}>
       {currentTheme === "dark" ? <LightModeIcon /> : <DarkModeIcon />}

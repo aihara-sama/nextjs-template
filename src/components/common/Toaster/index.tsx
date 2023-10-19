@@ -1,8 +1,24 @@
 import { CheckCircle, Close, Warning } from "@mui/icons-material";
 import { Box, IconButton, Typography } from "@mui/material";
+import type { FunctionComponent } from "react";
 import toast, { Toaster as RootToaster } from "react-hot-toast";
 
-export const Toaster = () => {
+export const Toaster: FunctionComponent = () => {
+  // ~~~~~ Redux state ~~~~~
+
+  // ~~~~~ Hooks ~~~~~
+
+  // ~~~~~ Cmp state ~~~~~
+
+  // ~~~~~ Refs ~~~~~
+
+  // ~~~~~ Vars ~~~~~
+
+  // ~~~~~ Effects ~~~~~
+
+  // ~~~~~ Handlers ~~~~~
+
+  // ~~~~~ JSX ~~~~~
   return (
     <RootToaster position="bottom-right">
       {(currentToast) => {

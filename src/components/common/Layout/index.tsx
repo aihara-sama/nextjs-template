@@ -1,15 +1,33 @@
 import { Box, Container } from "@mui/material";
-import type { FC, PropsWithChildren } from "react";
-
+import type { FunctionComponent, ReactNode } from "react";
 import { Header } from "../Header";
 
-export const Layout: FC<PropsWithChildren> = ({ children }) => {
+interface IProps {
+  children: ReactNode;
+}
+
+export const Layout: FunctionComponent<IProps> = ({ children }) => {
+  // ~~~~~ Redux state ~~~~~
+
+  // ~~~~~ Hooks ~~~~~
+
+  // ~~~~~ Cmp state ~~~~~
+
+  // ~~~~~ Refs ~~~~~
+
+  // ~~~~~ Vars ~~~~~
+
+  // ~~~~~ Effects ~~~~~
+
+  // ~~~~~ Handlers ~~~~~
+
+  // ~~~~~ JSX ~~~~~
   return (
-    <Box component="main" height="100%">
+    <>
       <Header />
-      <Container component="section" sx={{ height: "calc(100% - 60px)" }}>
-        {children}
-      </Container>
-    </Box>
+      <Box component="main">
+        <Container>{children}</Container>
+      </Box>
+    </>
   );
 };
